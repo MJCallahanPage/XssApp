@@ -1,0 +1,9 @@
+@main("Add Comment"){
+
+    <h2>Login</h2>
+
+    <form action="@routes.XSSController.addComment" method="post">
+        <textarea  class="newComment" name="comment" placeholder="Your Comment"></textarea>
+        <button    type="submit" name="addComment" value="addComment">Add Comment</button>
+    </form>
+}

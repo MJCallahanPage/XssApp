@@ -1,0 +1,38 @@
+@import scala.collection.mutable.ArrayBuffer
+
+@(goodComments:ArrayBuffer[String])(badComments:ArrayBuffer[Html])
+
+@main("All Comments"){
+
+    <p>
+    <button id="back" name="back" value="back" onclick="window.history.back()">Back</button>
+    </p>
+
+    <table class="table">
+        <col width="50%" />
+        <thead>
+            <td><h2>Vulnerable Comment</h2></td>
+            <td><h2>Protected Comment</h2></td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @for(x <- badComments){
+                        <div class="comment bad">
+                            @x
+                        </div>
+                    }
+                </td>
+                <td>
+                    @for(x <- goodComments){
+                    <div class="comment good">
+                        @x
+                    </div>
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+}
